@@ -337,9 +337,9 @@
     </div>
     <div id="staffRollOverlay" class="fixed inset-0 z-[100002] hidden overflow-hidden" style="background: radial-gradient(ellipse at 50% 28%, #2e1065 0%, #1e1b4b 55%, #070830 100%);" onclick="onStaffRollTap()">
         <div id="staffRollInner" class="absolute left-0 right-0 top-0 mx-auto w-full max-w-xl px-6 text-center will-change-transform"></div>
-        <div id="staffRollFinale" class="absolute left-0 right-0 top-1/2 flex items-center justify-center pointer-events-none" style="height: 46vh; transform: translateY(80vh);">
-            <img src="oshimai.png" alt="おしまい" class="max-w-[88%] max-h-full object-contain" draggable="false" onerror="if(!this.dataset.triedUpper){this.dataset.triedUpper='1';this.src='oshimai.PNG';}else{this.classList.add('hidden');document.getElementById('staffRollOshimaiFallback').classList.remove('hidden');}">
-            <div id="staffRollOshimaiFallback" class="hidden text-5xl sm:text-7xl font-black text-yellow-300 tracking-widest whitespace-nowrap" style="text-shadow: 0 0 24px rgba(250,204,21,.65), 3px 3px 0 #b45309;">✨ おしまい ✨</div>
+        <div id="staffRollFinale" class="absolute left-0 right-0 top-1/2 flex items-center justify-center pointer-events-none" style="height: 64vh; transform: translateY(80vh);">
+            <img src="oshimai.png" alt="おしまい" class="max-w-[96%] max-h-full object-contain" draggable="false" onerror="if(!this.dataset.triedUpper){this.dataset.triedUpper='1';this.src='oshimai.PNG';}else{this.classList.add('hidden');document.getElementById('staffRollOshimaiFallback').classList.remove('hidden');}">
+            <div id="staffRollOshimaiFallback" class="hidden text-6xl sm:text-8xl font-black text-yellow-300 tracking-widest whitespace-nowrap" style="text-shadow: 0 0 24px rgba(250,204,21,.65), 3px 3px 0 #b45309;">✨ おしまい ✨</div>
         </div>
         <button onclick="event.stopPropagation(); skipStaffRoll();" class="absolute top-3 right-3 z-10 px-3 py-1.5 text-xs bg-slate-800/90 hover:bg-slate-700 text-white rounded-full border border-gray-500 font-bold shadow cursor-pointer">スキップ ≫</button>
     </div>
@@ -502,7 +502,7 @@
             <img id="titleLightImgKataru" src="title_light_kataru.png" alt="" class="hidden absolute inset-0 w-full h-full" draggable="false">
             <img id="titleLightImgTomoko" src="title_light_tomoko.png" alt="" class="hidden absolute inset-0 w-full h-full" draggable="false">
         </div>
-        <div class="absolute bottom-2 right-3 text-[10px] font-bold text-purple-950/40 select-none">ver. index-1108-173 ・ 468,454 bytes</div>
+        <div class="absolute bottom-2 right-3 text-[10px] font-bold text-purple-950/40 select-none">ver. index-1108-176 ・ 471,986 bytes</div>
         <div id="titleGoldCredit" class="hidden absolute bottom-2 left-3 text-[10px] font-bold text-amber-900/50 select-none">♫ 神無月～オルゴールver.～</div>
         <div class="relative text-center max-w-2xl w-full max-h-full overflow-y-auto py-2">
             <img id="titleLogoImg" src="title_logo.png" alt="星めぐりに願いを" class="w-full h-auto max-h-[60dvh] object-contain mx-auto mb-2 select-none" draggable="false" onerror="if(!this.dataset.triedUpper){this.dataset.triedUpper='1';this.src='title_logo.PNG';}else{this.classList.add('hidden');document.getElementById('titleLogoFallback').classList.remove('hidden');}">
@@ -537,7 +537,7 @@
             <div class="mt-4"><div class="font-black text-yellow-100">⭐ 星のカケラ</div><div class="text-sm sm:text-base leading-relaxed mt-1">星のマスに止まると「星のカケラ」が1個もらえます。誰かが拾うと、星のマスはマップの別の場所へ移動します（星のマスはいつも6つあります）。</div></div>
             <div class="mt-4"><div class="font-black text-yellow-100">⚔️ 奪い合い</div><div class="text-sm sm:text-base leading-relaxed mt-1">他のプレイヤーと同じマスに止まると、相手が星のカケラを持っていれば1個奪えます。自分のいるマスに相手が止まると、逆に奪われてしまいます。</div></div>
             <div class="mt-4"><div class="font-black text-yellow-100">🗺️ マスの種類</div><div class="text-sm sm:text-base leading-relaxed mt-1">🔵 プラスマス（青）： サイコロの目が大きいほど、リスナーが増える<br>🔴 マイナスマス（赤）： サイコロの目が大きいほど、リスナーが減る<br>⚪ 白マス： 書かれた数字の分だけ、リスナーが増えたり減ったりする<br>🟡 アイテムマス（黄）： アイテムが1個もらえる（アイテムは自分の番に、サイコロを振る前に使えます）<br>※ 日数が進むと、6日ごとにリスナーの増減する倍率が上がっていきます（×1 → ×2 → ×3 …）<br>※ スタートを通過するとリスナー＋300人（星のカケラが5個未満の時）</div></div>
-            <div class="mt-4"><div class="font-black text-yellow-100">🎁 アイテムの効果</div><div class="text-sm sm:text-base leading-relaxed mt-1">スパチャブースター： リスナー＋500人<br>ASMR用マイク： サイコロを振って出た目×200人×日数倍率のリスナーが増える<br>魔法のサイコロ： 次の出目＋3<br>イカサマダイス： 使うと好きな目を選んで進める<br>例のワープする土管： 使うとマップ上のどこかへワープする<br>袖の下： サイコロを振って、出た目×100人×日数倍率を他のプレイヤー全員から自分のリスナーに移す<br>ネットサーフィン（物理）： 移動用のサイコロがそのターンだけ2つになる（合計分進む）<br>影分身（等身大スタンドポップ）： 次のマイナスを1回肩代わりする<br>金盾： 持っているだけで星のカケラを奪われるのを3回防ぐ（使い切ると消える）<br>銀盾： 持っているだけで星のカケラを奪われるのを1回防ぐ（使い切ると消える）<br>横取りチャーム： 一番リスナーの多い相手から300人×日数倍率を奪う</div></div>
+            <div class="mt-4"><div class="font-black text-yellow-100">🎁 アイテムの効果</div><div class="text-sm sm:text-base leading-relaxed mt-1">デジタルフラワースタンド： テンション倍増で、次のサイコロの目×2のマス進める<br>ASMR用マイク： サイコロを振って出た目×200人のリスナーが増える（日数が進むほど倍増）<br>コラボ配信（乗っ取り）： ゴール済みの人以外の誰かとランダムで場所を入れ替わる<br>イカサマダイス： 使うと好きな目を選んで進める<br>例のワープする土管： 使うとマップ上のどこかへワープする<br>袖の下： サイコロを振って、出た目×100人を他のプレイヤー全員から自分のリスナーに移す（日数が進むほど倍増）<br>ネットサーフィン（物理）： 移動用のサイコロがそのターンだけ2つになる（合計分進む）<br>影分身（等身大スタンドポップ）： 次のマイナスを1回肩代わりする<br>金盾： 持っているだけで星のカケラを奪われるのを3回防ぐ（使い切ると消える）<br>銀盾： 持っているだけで星のカケラを奪われるのを1回防ぐ（使い切ると消える）<br>横取りチャーム： 一番リスナーの多い相手から300人を奪う（日数が進むほど倍増）</div></div>
             <div class="mt-4"><div class="font-black text-yellow-100">⛪ ゴール（星の祭壇）</div><div class="text-sm sm:text-base leading-relaxed mt-1">星のカケラを5個以上持ってスタートに戻ると、祭壇への道が選べます。⬇️ 祭壇へ進めばゴール、⬅️ 左へ進めばゴールせずに周回を続けられます（周回してカケラをもっと集めることもできます）。</div></div>
             <div class="mt-4"><div class="font-black text-yellow-100">⌛ ゲームの終わり</div><div class="text-sm sm:text-base leading-relaxed mt-1">最初の一人がゴールすると、そこから10日（10ラウンド）でゲーム終了です。まだゴールしていない人は、その時点の成績で順位が決まります。全員がゴールしても終了します。</div></div>
             <div class="mt-4"><div class="font-black text-yellow-100">🏆 順位と評価点</div><div class="text-sm sm:text-base leading-relaxed mt-1">順位は ①星のカケラの数 ②リスナー数 の順で決まります。<br>評価点 ＝ 星のカケラ × 100,000 ＋ リスナー数<br>早くゴールした人にはリスナーのボーナスがあります（1位 ＋1,500人／ 2位 ＋1,000人／ 3位 ＋500人）。</div></div>
@@ -2295,6 +2295,7 @@
                 p.diceBonus = 0;
                 p.shield = 0;
                 p.doubleDice = false;
+                p.moveDouble = false;
                 p.lastVisitedTileIndex = tileCoords.length - 1;
                 p.renderX = startTile.x;
                 p.renderY = startTile.y;
@@ -3111,7 +3112,7 @@
                     players: players.map(p => ({
                         name: p.name, char: p.char, color: p.color, pos: p.pos,
                         listeners: p.listeners, fragments: p.fragments,
-                        items: (p.items || []).slice(), diceBonus: p.diceBonus || 0, doubleDice: !!p.doubleDice,
+                        items: (p.items || []).slice(), diceBonus: p.diceBonus || 0, doubleDice: !!p.doubleDice, moveDouble: !!p.moveDouble,
                         shield: p.shield || 0, finished: !!p.finished, rank: p.rank || 0,
                         isHuman: !!p.isHuman, lastVisitedTileIndex: p.lastVisitedTileIndex
                     }))
@@ -3173,7 +3174,7 @@
                 let p = players[i];
                 p.name = sp.name; p.char = sp.char; p.color = sp.color;
                 p.pos = sp.pos; p.listeners = sp.listeners; p.fragments = sp.fragments;
-                p.items = (sp.items || []).slice(); p.diceBonus = sp.diceBonus || 0; p.doubleDice = !!sp.doubleDice;
+                p.items = (sp.items || []).slice(); p.diceBonus = sp.diceBonus || 0; p.doubleDice = !!sp.doubleDice; p.moveDouble = !!sp.moveDouble;
                 p.shield = sp.shield || 0; p.finished = !!sp.finished; p.rank = sp.rank || 0;
                 p.isHuman = !!sp.isHuman;
                 p.lastVisitedTileIndex = (typeof sp.lastVisitedTileIndex === 'number') ? sp.lastVisitedTileIndex : tileCoords.length - 1;
@@ -3765,6 +3766,7 @@
                         if (pSync.items) players[idx].items = pSync.items;
                         players[idx].diceBonus = pSync.diceBonus || 0;
                         players[idx].doubleDice = !!pSync.doubleDice;
+                        players[idx].moveDouble = !!pSync.moveDouble;
                         players[idx].shield = pSync.shield || 0;
                         players[idx].fragments = pSync.fragments || 0;
                         players[idx].listeners = pSync.listeners;
@@ -3925,6 +3927,7 @@
                     items: p.items || [],
                     diceBonus: p.diceBonus || 0,
                     doubleDice: !!p.doubleDice,
+                    moveDouble: !!p.moveDouble,
                     shield: p.shield || 0,
                     fragments: p.fragments || 0,
                     pos: p.pos,
@@ -5783,6 +5786,11 @@
                 rollPlayer.doubleDice = false; // このターンの移動ロールで消費する（イカサマ使用時も消費だけする）
                 useDouble = !forced;
             }
+            let moveDoubled = false;
+            if (rollPlayer && rollPlayer.moveDouble && !isSubRollPending && !pendingSodeRoll && !pendingMicRoll) {
+                rollPlayer.moveDouble = false; // このターンの移動ロールで消費する
+                moveDoubled = true;
+            }
             updateItemUI();
             lastProgressAt = Date.now();
             let btnRoll = document.getElementById('btnRoll');
@@ -5827,15 +5835,17 @@
                             turnPhase = 'moving';
                             let p = players[currentPlayerIndex];
                             let totalRoll = useDouble ? roll + (currentDiceVal2 || 0) : roll;
+                            let baseRoll = totalRoll;
+                            if (moveDoubled) totalRoll = totalRoll * 2;
                             let bonus = p.diceBonus || 0;
                             let dr = document.getElementById('diceResultText');
-                            if (bonus > 0) {
-                                p.diceBonus = 0;
-                                if (dr) dr.innerText = useDouble ? `${roll} ＋ ${currentDiceVal2} ＋ アイテム効果で +${bonus}マス！` : `${roll} ＋ アイテム効果で +${bonus}マス！`;
-                                updateItemUI();
-                            } else if (useDouble && dr) {
-                                dr.innerText = `${roll} ＋ ${currentDiceVal2} ＝ ${totalRoll}マス！`;
+                            if (bonus > 0) p.diceBonus = 0;
+                            if (dr) {
+                                if (moveDoubled) dr.innerText = `${baseRoll} ×2（フラスタ効果）＝ ${totalRoll}マス！` + (bonus > 0 ? ` ＋ アイテム効果で +${bonus}マス！` : '');
+                                else if (bonus > 0) dr.innerText = useDouble ? `${roll} ＋ ${currentDiceVal2} ＋ アイテム効果で +${bonus}マス！` : `${roll} ＋ アイテム効果で +${bonus}マス！`;
+                                else if (useDouble) dr.innerText = `${roll} ＋ ${currentDiceVal2} ＝ ${totalRoll}マス！`;
                             }
+                            if (bonus > 0) updateItemUI();
                             movePlayer(currentPlayerIndex, totalRoll + bonus);
                         }
                     }, 1200);
@@ -6388,7 +6398,7 @@
             let lEl = document.getElementById(`p${pIndex + 1}Listeners`);
             if (lEl) lEl.innerText = `${p.listeners.toLocaleString()}人`;
             document.getElementById('currentEventTitle').innerText = '【🎤 ASMR用マイク】';
-            document.getElementById('currentEventDesc').innerText = `${p.name}さんのASMR配信…サイコロの目は「${roll}」${mult > 1 ? `（日数倍率×${mult}）` : ''}！`;
+            document.getElementById('currentEventDesc').innerText = `${p.name}さんのASMR配信…サイコロの目は「${roll}」${mult > 1 ? `（${currentTurnNumber}日目なので×${mult}）` : ''}！`;
             document.getElementById('currentEventEffect').innerText = `リスナー +${gain.toLocaleString()}人！続けて移動のサイコロを振れる。`;
             turnPhase = 'idle';
             let btnRoll = document.getElementById('btnRoll');
@@ -6416,7 +6426,7 @@
             let lEl = document.getElementById(`p${pIndex + 1}Listeners`);
             if (lEl) lEl.innerText = `${p.listeners.toLocaleString()}人`;
             document.getElementById('currentEventTitle').innerText = '【💴 袖の下】';
-            document.getElementById('currentEventDesc').innerText = `${p.name}さんの袖の下…サイコロの目は「${roll}」${mult > 1 ? `（日数倍率×${mult}）` : ''}！`;
+            document.getElementById('currentEventDesc').innerText = `${p.name}さんの袖の下…サイコロの目は「${roll}」${mult > 1 ? `（${currentTurnNumber}日目なので×${mult}）` : ''}！`;
             document.getElementById('currentEventEffect').innerText = total > 0 ? `${parts.join('、')}、合計 ${total.toLocaleString()}人を自分のリスナーに移した！続けて移動のサイコロを振れる。` : '移せるリスナーがなかった…続けて移動のサイコロを振れる。';
             turnPhase = 'idle';
             let btnRoll = document.getElementById('btnRoll');
@@ -6587,17 +6597,17 @@
         // 🎒 アイテム効果（名前から判定。シートで増えた名前にもキーワードで対応）
         // 🎁 内蔵アイテムプール：イベント（シート／編集）にアイテム行が無い時は、アイテムマスでここからランダムに配る。効果は itemEffectInfo の名前判定で決まる
         const DEFAULT_ITEM_POOL = [
-            { itemName: '⚡ スパチャブースター', title: '【🎁 アイテムゲット！】', desc: 'スパチャブースターを手に入れた！使うとリスナーが+500人増える。' },
-            { itemName: '🎤 ASMR用マイク', title: '【🎁 アイテムゲット！】', desc: 'ASMR用マイクを手に入れた！使うとサイコロを振って、出た目×200人×日数倍率のリスナーが増える。' },
-            { itemName: '🎲 魔法のサイコロ', title: '【🎁 アイテムゲット！】', desc: '魔法のサイコロを手に入れた！使うと次のサイコロが+3マスになる。' },
+            { itemName: '💐 デジタルフラワースタンド', title: '【🎁 アイテムゲット！】', desc: 'デジタルフラワースタンドが届いた！使うとテンション倍増で、次のサイコロの目×2のマス進める。' },
+            { itemName: '🎤 ASMR用マイク', title: '【🎁 アイテムゲット！】', desc: 'ASMR用マイクを手に入れた！使うとサイコロを振って、出た目×200人のリスナーが増える（日数が進むほど倍増）。' },
+            { itemName: '📹 コラボ配信（乗っ取り）', title: '【🎁 アイテムゲット！】', desc: 'コラボ配信（乗っ取り）を手に入れた！使うとゴール済みの人以外の誰かとランダムで場所を入れ替わる。' },
             { itemName: '🎲 イカサマダイス', title: '【🎁 アイテムゲット！】', desc: 'イカサマダイスを手に入れた！使うと好きな目を選んで進める。' },
             { itemName: '🟢 例のワープする土管', title: '【🎁 アイテムゲット！】', desc: '例のワープする土管を手に入れた！使うとマップ上のどこかへワープする。' },
-            { itemName: '💴 袖の下', title: '【🎁 アイテムゲット！】', desc: '袖の下を手に入れた！使うとサイコロを振って、出た目×100人×日数倍率を他のプレイヤー全員から自分のリスナーに移せる。' },
+            { itemName: '💴 袖の下', title: '【🎁 アイテムゲット！】', desc: '袖の下を手に入れた！使うとサイコロを振って、出た目×100人を他のプレイヤー全員から自分のリスナーに移せる（日数が進むほど倍増）。' },
             { itemName: '🏄 ネットサーフィン（物理）', title: '【🎁 アイテムゲット！】', desc: 'ネットサーフィン（物理）を手に入れた！使うとそのターンの移動サイコロが2個になり、合計分進める。' },
             { itemName: '👥 影分身（等身大スタンドポップ）', title: '【🎁 アイテムゲット！】', desc: '影分身（等身大スタンドポップ）を手に入れた！使うと次に受けるマイナスを1回肩代わりしてくれる。' },
             { itemName: '✨ 金盾', title: '【🎁 アイテムゲット！】', desc: '金盾を手に入れた！持っているだけで、星のカケラを奪われるのを3回守ってくれる。' },
             { itemName: '🛡️ 銀盾', title: '【🎁 アイテムゲット！】', desc: '銀盾を手に入れた！持っているだけで、星のカケラを奪われるのを1回守ってくれる。' },
-            { itemName: '🌀 横取りチャーム', title: '【🎁 アイテムゲット！】', desc: '横取りチャームを手に入れた！使うと一番リスナーが多い相手から300人×日数倍率を奪える。' },
+            { itemName: '🌀 横取りチャーム', title: '【🎁 アイテムゲット！】', desc: '横取りチャームを手に入れた！使うと一番リスナーが多い相手から300人を奪える（日数が進むほど倍増）。' },
         ];
         // 🛡️ 金盾・銀盾：持っているだけでカケラ防衛が自動発動するパッシブアイテム。残り回数は金盾の名前に「（あとN回）」として持つ
         function stealGuardRemaining(itemName) {
@@ -6623,17 +6633,19 @@
         function itemEffectInfo(itemName) {
             const n = String(itemName || '');
             if (n.includes('スパチャ') || n.includes('ブースター')) return { kind: 'listeners', val: 500, label: 'リスナー +500人' };
-            if (n.includes('マイク') || n.includes('ASMR')) return { kind: 'mic', val: 200, label: 'サイコロを振って出た目×200人×日数倍率のリスナーが増える' };
+            if (n.includes('マイク') || n.includes('ASMR')) return { kind: 'mic', val: 200, label: 'サイコロを振って出た目×200人のリスナーが増える（日数が進むほど倍増）' };
             if (n.includes('カケラ') || n.includes('星')) return { kind: 'fragment', val: 1, label: '星のカケラ +1個' };
             if (n.includes('サーフィン')) return { kind: 'doubleDice', val: 2, label: '移動サイコロがそのターン2個になる（合計分進む）' };
+            if (n.includes('フラワースタンド') || n.includes('デジタルフラワー')) return { kind: 'moveDouble', val: 2, label: 'テンション倍増！次のサイコロの目×2のマス進める' };
+            if (n.includes('乗っ取り') || n.includes('コラボ配信')) return { kind: 'swap', val: 0, label: 'ゴール済みの人以外の誰かとランダムで場所を入れ替わる' };
             if (n.includes('イカサマ')) return { kind: 'cheatDice', val: 0, label: '好きな目を出して進める' };
             if (n.includes('サイコロ') || n.includes('ダイス')) return { kind: 'dice', val: 3, label: '次のサイコロ +3マス' };
             if (n.includes('金盾')) return { kind: 'stealGuard', val: 3, label: '持っているだけでカケラを奪われるのを3回防ぐ' };
             if (n.includes('銀盾')) return { kind: 'stealGuard', val: 1, label: '持っているだけでカケラを奪われるのを1回防ぐ' };
             if (n.includes('影分身') || n.includes('シールド') || n.includes('ガード') || n.includes('守')) return { kind: 'shield', val: 1, label: '次のマイナスを1回肩代わり' };
-            if (n.includes('袖の下')) return { kind: 'sode', val: 0, label: 'サイコロの目×100人×日数倍率を他の全員から自分のリスナーに移す' };
+            if (n.includes('袖の下')) return { kind: 'sode', val: 0, label: 'サイコロの目×100人を他の全員から自分のリスナーに移す（日数が進むほど倍増）' };
             if (n.includes('土管') || n.includes('ワープ')) return { kind: 'warp', val: 0, label: 'マップ上のどこかへワープする' };
-            if (n.includes('奪') || n.includes('横取り')) return { kind: 'steal', val: 300, label: '一番多い相手からリスナー300人×日数倍率を奪う' };
+            if (n.includes('奪') || n.includes('横取り')) return { kind: 'steal', val: 300, label: '一番多い相手からリスナー300人を奪う（日数が進むほど倍増）' };
             return { kind: 'listeners', val: 200, label: 'リスナー +200人' };
         }
 
@@ -6773,14 +6785,33 @@
             } else if (info.kind === 'doubleDice') {
                 p.doubleDice = true;
                 effectText = 'このターンの移動サイコロが2個になった！（合計分進む）';
+            } else if (info.kind === 'moveDouble') {
+                p.moveDouble = true;
+                effectText = 'テンション倍増！次のサイコロの目×2のマス進める！';
+            } else if (info.kind === 'swap') {
+                let targets = players.filter((q, qi) => qi !== pIndex && !q.finished && q.pos !== p.pos);
+                if (targets.length === 0) {
+                    p.items.splice(itemIndex, 0, itemName); // 入れ替わる相手がいないので消費しない
+                    effectText = '入れ替わる相手がいなかった…（アイテムは消費されなかった）';
+                } else {
+                    let target = targets[Math.floor(Math.random() * targets.length)];
+                    let oldPos = p.pos;
+                    p.pos = target.pos; target.pos = oldPos;
+                    let tA = tileCoords[p.pos], tB = tileCoords[target.pos];
+                    if (tA) { p.renderX = tA.x; p.renderY = tA.y; p.goshuX = tA.x; p.goshuY = tA.y; }
+                    if (tB) { target.renderX = tB.x; target.renderY = tB.y; target.goshuX = tB.x; target.goshuY = tB.y; }
+                    p.lastVisitedTileIndex = (p.pos + tileCoords.length - 1) % tileCoords.length;
+                    target.lastVisitedTileIndex = (target.pos + tileCoords.length - 1) % tileCoords.length;
+                    effectText = `${target.name}さんと場所が入れ替わった！（乗っ取りコラボ）`;
+                }
             } else if (info.kind === 'mic') {
                 pendingMicRoll = true;
-                effectText = 'ASMR用マイクでサイコロを振る…出目×200人×日数倍率増える！';
+                effectText = 'ASMR用マイクでサイコロを振る…出目×200人増える！';
                 executeRollForCurrentPlayer();
                 if (turnPhase === 'idle') pendingMicRoll = false; // ロールが始まらなかった場合は取り消す
             } else if (info.kind === 'sode') {
                 pendingSodeRoll = true;
-                effectText = '袖の下でサイコロを振る…出目×100人×日数倍率が移動する！';
+                effectText = '袖の下でサイコロを振る…出目×100人ずつ移動する！';
                 executeRollForCurrentPlayer();
                 if (turnPhase === 'idle') pendingSodeRoll = false; // ロールが始まらなかった場合は取り消す
             }
@@ -6847,6 +6878,12 @@
                 let b = document.createElement('span');
                 b.className = 'px-2 py-0.5 text-xs bg-sky-900/80 border border-sky-400 text-sky-200 rounded font-bold flex-none shadow';
                 b.textContent = '🎲🎲 移動サイコロ2個（合計分進む）';
+                container.appendChild(b);
+            }
+            if (p && p.moveDouble) {
+                let b = document.createElement('span');
+                b.className = 'px-2 py-0.5 text-xs bg-pink-900/80 border border-pink-400 text-pink-200 rounded font-bold flex-none shadow';
+                b.textContent = '💐 次の目×2で進む';
                 container.appendChild(b);
             }
             if (p && (p.shield || 0) > 0) {
