@@ -502,7 +502,7 @@
             <img id="titleLightImgKataru" src="title_light_kataru.png" alt="" class="hidden absolute inset-0 w-full h-full" draggable="false">
             <img id="titleLightImgTomoko" src="title_light_tomoko.png" alt="" class="hidden absolute inset-0 w-full h-full" draggable="false">
         </div>
-        <div class="absolute bottom-2 right-3 text-[10px] font-bold text-purple-950/40 select-none">ver. index-1108-176 ・ 471,986 bytes</div>
+        <div class="absolute bottom-2 right-3 text-[10px] font-bold text-purple-950/40 select-none">ver. index-1108-178 ・ 474,242 bytes</div>
         <div id="titleGoldCredit" class="hidden absolute bottom-2 left-3 text-[10px] font-bold text-amber-900/50 select-none">♫ 神無月～オルゴールver.～</div>
         <div class="relative text-center max-w-2xl w-full max-h-full overflow-y-auto py-2">
             <img id="titleLogoImg" src="title_logo.png" alt="星めぐりに願いを" class="w-full h-auto max-h-[60dvh] object-contain mx-auto mb-2 select-none" draggable="false" onerror="if(!this.dataset.triedUpper){this.dataset.triedUpper='1';this.src='title_logo.PNG';}else{this.classList.add('hidden');document.getElementById('titleLogoFallback').classList.remove('hidden');}">
@@ -2596,8 +2596,18 @@
             if (bgmFadeTimer) { clearInterval(bgmFadeTimer); bgmFadeTimer = null; }
         }
 
+        function stopAllBgm() {
+            ['selectBgmAudio', 'gameBgmAudio', 'endingBgmAudio', 'endingUtsuroBgmAudio', 'endingKataruBgmAudio', 'endingTomokoBgmAudio', 'endingTalkBgmAudio', 'titleGoldBgmAudio'].forEach(id => {
+                let a = document.getElementById(id);
+                if (a) { try { a.pause(); } catch (e) {} }
+            });
+        }
+
         function playSelectBgm() {
             clearBgmFxMute();
+            // トゥルーエンド未解放の間は、タイトル画面表示中は無音にする（曲はオープニングトークが始まる時に流れ始める）
+            let tsEl = document.getElementById('titleScreen');
+            if (!isTrueSeen() && tsEl && !tsEl.classList.contains('hidden')) { stopAllBgm(); return; }
             activeBgm = isTrueSeen() ? 'titleGold' : 'select'; // トゥルーエンド経験後は金色タイトル専用BGM
             attemptPlayBgm();
         }
@@ -2982,9 +2992,28 @@
         let csMorphPairCount = 0;
 
         function updateCsSeqCounter() {
-            // 進み具合は世界地図の上に大きく出るデジタル数字（左5・中2・右6）で示す
+            // 入力チェック表示（SEQ うつろ 0/5 → ？ 0/1 → …）を復活。大きなデジタル数字（左5・中2・右6）も併用する
             let el = document.getElementById('csSeqCounter');
-            if (el) { el.innerHTML = ''; el.classList.add('hidden'); }
+            if (el) {
+                el.classList.remove('hidden');
+                let segs = [5, 1, 2, 1, 6];
+                let special = csUnlocked ? 'トモコ' : '？';
+                let labels = ['うつろ', special, 'うつろ', special, 'うつろ'];
+                if (csMorphUnlocked) {
+                    el.innerHTML = '<span class="text-green-400">✔ コマンド成立（現在: ' + (csMorphKataru ? 'かたる' : 'うつろ') + '／2回連続クリックで往復）</span>';
+                } else {
+                    let rest = csSeqProgress;
+                    let html = '<span class="text-white/50">SEQ </span>';
+                    segs.forEach((n, i) => {
+                        let got = Math.max(0, Math.min(n, rest));
+                        rest -= got;
+                        let cls = got >= n ? 'text-green-400' : (got > 0 ? 'text-yellow-300' : 'text-white/40');
+                        html += '<span class="' + cls + '">' + labels[i] + ' ' + got + '/' + n + '</span>';
+                        if (i < segs.length - 1) html += '<span class="text-white/30"> → </span>';
+                    });
+                    el.innerHTML = html;
+                }
+            }
             updateCsCodeDigits();
         }
 
@@ -7237,6 +7266,12 @@
                 ctx.restore();
             }
             requestAnimationFrame(gameLoop);
+        }
+    </script>
+    <script>
+        // オフライン対応：サービスワーカー（sw.js）を登録する。https/localhost でのみ有効で、無い環境では静かに何もしない
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => { navigator.serviceWorker.register('sw.js').catch(() => {}); });
         }
     </script>
 </body>
